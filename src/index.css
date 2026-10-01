@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&display=swap');
+
+:root {
+  --bg: #f4f5f4;
+  --card: #fff;
+  --ink: #17201b;
+  --mute: #6b756f;
+  --line: #dfe3e0;
+  --green: #008751;
+  --greenbg: #e3f3ea;
+  --bad: #b3412f;
+  --badbg: #f7e6e2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121715;
+    --card: #1b221f;
+    --ink: #eef2ef;
+    --mute: #9aa6a0;
+    --line: #2c3631;
+    --green: #2fb67a;
+    --greenbg: #173a2a;
+    --bad: #e5806d;
+    --badbg: #3b221d;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+#root {
+  width: 100%;
+  max-width: 520px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0 0 4px;
+}
+
+.sub {
+  color: var(--mute);
+  margin: 0 0 24px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.bar {
+  height: 4px;
+  background: var(--line);
+  border-radius: 2px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.bar i {
+  display: block;
+  height: 100%;
+  background: var(--green);
+  transition: width 0.3s;
+}
+
+.meta {
+  color: var(--mute);
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+}
+
+.q {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+.opt {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.opt:hover:not(:disabled) {
+  border-color: var(--green);
+}
+
+.opt:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+
+.opt.right {
+  background: var(--greenbg);
+  border-color: var(--green);
+}
+
+.opt.wrong {
+  background: var(--badbg);
+  border-color: var(--bad);
+}
+
+.opt:disabled {
+  cursor: default;
+}
+
+.btn {
+  font: inherit;
+  font-weight: 600;
+  background: var(--green);
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  margin-left: 8px;
+}
+
+.score {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.share {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin: 16px 0;
+}
